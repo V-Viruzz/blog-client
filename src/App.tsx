@@ -1,13 +1,12 @@
+import LayoutPost from './components/LayoutPost'
+import Home from './components/Home'
+import './App.css'
 
 function App (): JSX.Element {
   return (
     <>
-      <div>
-        <h2>post blog</h2>
-      </div>
-      <div>
-
-      </div>
+      <LayoutPost />
+      <Home />
     </>
   )
 }
