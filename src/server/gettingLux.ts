@@ -10,7 +10,7 @@ async function gettingLux (): Promise<Message[] | undefined> {
         'Content-Type': 'application/json'
       }
     }
-    const response = await fetch(`${API_URL}/lux`, options)
+    const response = await fetch(`${API_URL}/api/lux`, options)
 
     if (response.ok) {
       const result: Message[] = await response.json()

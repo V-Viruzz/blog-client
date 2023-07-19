@@ -23,7 +23,7 @@ async function postBlog (date: Message): Promise<void> {
     // },
     body: formData
   }
-  await fetch(`${API_URL}/luxear`, options)
+  await fetch(`${API_URL}/api/luxear`, options)
     .then(async res => await res.json())
     .then(async res => { console.log(res) })
 }
