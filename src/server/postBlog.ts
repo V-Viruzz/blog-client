@@ -3,7 +3,7 @@ interface Message {
   image?: Blob
 }
 
-const url = 'http://localhost:3000/api/luxear'
+const API_URL: string = import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
 async function postBlog (date: Message): Promise<void> {
   const { message, image } = date
@@ -23,7 +23,7 @@ async function postBlog (date: Message): Promise<void> {
     // },
     body: formData
   }
-  await fetch(url, options)
+  await fetch(`${API_URL}/luxear`, options)
     .then(async res => await res.json())
     .then(async res => { console.log(res) })
 }
