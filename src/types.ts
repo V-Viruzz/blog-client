@@ -1,13 +1,26 @@
 export interface Message {
   text?: string
   date: Date
-  image?: ImageData
+  image: ImageData
 }
 
 export interface ImageData {
-  buffer: {
-    data: Buffer
+  imageOptimized: {
+    originalname: string
+    mimetype: string
+    encoding: string
+    buffer: {
+      data: Buffer
+      type: string
+    }
   }
-  data: Uint8Array
-  mimetype: string
+  imageOriginal: {
+    originalname: string
+    mimetype: string
+    encoding: string
+    buffer: {
+      data: Buffer
+      type: string
+    }
+  }
 }
