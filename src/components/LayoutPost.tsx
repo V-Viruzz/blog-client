@@ -15,6 +15,12 @@ function LayoutPost (): JSX.Element {
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
 
+    const lenghText: number = message.length
+    if (lenghText >= 1500) {
+      window.alert(`llegaste al limite de caracteres -${lenghText - 1500}`)
+      return
+    }
+
     void postBlog({ message, image })
       .then(() => {
         setImage(undefined)
