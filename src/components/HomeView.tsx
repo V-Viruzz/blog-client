@@ -2,7 +2,7 @@ import useLux from '../hooks/useLux'
 import LuxList from './LuxList'
 import Loading from './Loading'
 
-function Home (): JSX.Element {
+function HomeView (): JSX.Element {
   const { lux, isLoading, incrementElements } = useLux()
 
   return (
@@ -17,4 +17,4 @@ function Home (): JSX.Element {
   )
 }
 
-export default Home
+export default HomeView
