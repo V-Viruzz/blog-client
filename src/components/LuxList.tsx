@@ -13,7 +13,7 @@ function LuxList ({ lux, incrementElements }: Props): JSX.Element {
   }
 
   return (
-    <div className='py-3'>
+    <div className='py-3 pb-19'>
       <div className="flex flex-col gap-3 items-center">
         {
           lux.map(({ text, image }, index) => {

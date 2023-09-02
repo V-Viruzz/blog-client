@@ -3,9 +3,12 @@ import App from './App.tsx'
 import './index.css'
 import 'virtual:uno.css'
 import { LuxProvider } from './context/lux.tsx'
+import { ErrorProvider } from './context/error.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <LuxProvider>
-        <App />
+        <ErrorProvider>
+            <App />
+        </ErrorProvider >
     </LuxProvider>
 )
