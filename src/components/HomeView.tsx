@@ -1,18 +1,18 @@
-import useLux from '../hooks/useLux'
 import LuxList from './LuxList'
 import Loading from './Loading'
 
-function HomeView (): JSX.Element {
-  const { lux, isLoading, incrementElements } = useLux()
+import { useLuxReturnType } from '../hooks/useLux'
 
+interface Props extends useLuxReturnType { }
+
+const HomeView: React.FC<Props> = ({ lux, isLoading, incrementElements }) => {
   return (
     <>
       {
         !isLoading
-          ? <LuxList lux={lux} incrementElements={incrementElements}/>
+          ? <LuxList lux={lux} incrementElements={incrementElements} />
           : <Loading />
       }
-
     </>
   )
 }

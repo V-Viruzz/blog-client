@@ -5,25 +5,22 @@ import RefreshIcon from './Icons/RefreshIcon'
 import SendIcon from './Icons/SendIcon'
 
 interface Props {
-  message: string
   image?: Blob
-  setMessage: (message: string) => void
   setImage: (image: Blob | undefined) => void
   sendMessage: (message: string) => Promise<void>
 }
 
-const LayoutPost: React.FC<Props> = ({ message, image, setMessage, setImage, sendMessage }) => {
+const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
   const { setRefresh, refresh } = useContext(LuxContext)
 
-  const handleChangeText = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-    const value = event.target.value
-    setMessage(value)
-  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
-
+    const target = (event.target as HTMLFormElement)
+    const message = target['input-message'].value;
+    target.reset()
     sendMessage(message)
+
   }
 
   const handleChangeImage = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -41,8 +38,7 @@ const LayoutPost: React.FC<Props> = ({ message, image, setMessage, setImage, sen
       >
         <textarea
           className='w-100% h-20 max-w-sm'
-          onChange={handleChangeText}
-          value={message}
+          id='input-message'
         ></textarea>
         <div className='flex justify-between items-center w-100% max-w-sm'>
           <input
@@ -64,13 +60,13 @@ const LayoutPost: React.FC<Props> = ({ message, image, setMessage, setImage, sen
             className='bg-transparent border-none shadow-none active:border-none p-0'
             onClick={() => { setRefresh(!refresh) }}>
 
-            <RefreshIcon strokeWidth="2" strokeLinecap="round"/>
+            <RefreshIcon strokeWidth="2" strokeLinecap="round" />
           </button>
           <button
             className='bg-transparent border-none shadow-none active:border-none p-0'
             type='submit'>
 
-            <SendIcon strokeWidth="2" strokeLinecap="round"/>
+            <SendIcon strokeWidth="2" strokeLinecap="round" />
           </button>
         </div>
       </form>

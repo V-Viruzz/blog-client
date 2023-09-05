@@ -1,31 +1,32 @@
 interface Message {
   message?: string
   image?: Blob
+  user?: string
 }
 
 const API_URL: string = import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
-async function postBlog (date: Message): Promise<void> {
-  const { message, image } = date
-  console.log('🚀 ~ file: postBlog.ts:10 ~ postBlog ~ image:', image)
+async function postBlog({ message, image, user }: Message): Promise<void> {
+  const url = user !== undefined ? `user/${user}` : 'luxers'
   const formData = new FormData()
+
   if (image != null) {
     formData.append('file', image)
   }
   if (message != null) {
-    formData.append('message', message)
+    formData.append('text', message)
   }
-  formData.append('date', new Date().toString())
+  formData.append('date', new Date().toISOString())
   console.log(formData)
 
   const options = {
-    method: 'POST',
+    method: 'PUT',
     // headers: {
     //   Origin: 'http://localhost:3000'
     // },
     body: formData
   }
-  await fetch(`${API_URL}/api/luxers`, options)
+  await fetch(`${API_URL}/api/${url}`, options)
     .then(async res => await res.json())
     .then(async res => { console.log(res) })
 }

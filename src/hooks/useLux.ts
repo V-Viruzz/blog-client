@@ -3,18 +3,18 @@ import { type Message } from '../types'
 import { LuxContext } from '../context/lux'
 import gettingLux from '../server/gettingLux'
 
-interface useLuxReturnType {
+export interface useLuxReturnType {
   isLoading: boolean
   lux: Message[]
   setLux: (value: Message[]) => void
   incrementElements: (num: number) => void
 }
 
-function useLux (): useLuxReturnType {
+function useLux(): useLuxReturnType {
   const { refresh } = useContext(LuxContext)
-  const [lux, setLux] = useState <Message[]>([])
-  const [numberOfElements, setNumberOfElements] = useState(7)
+  const [lux, setLux] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(true) // Nuevo estado local para controlar la carga
+  const [numberOfElements, setNumberOfElements] = useState(7)
 
   const incrementElements = (num: number): void => {
     setNumberOfElements(prev => prev + num)
