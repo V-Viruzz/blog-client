@@ -1,12 +1,18 @@
 import LayoutPost from '../components/LayoutPost'
 import HomeView from '../components/HomeView'
+import useMessage from '../hooks/useMessage'
+import useLux from '../hooks/useLux'
 
-function Home (): JSX.Element {
+function Home(): JSX.Element {
+  const messageLux = useMessage()
+  const lux = useLux()
+
   return (
-    <>
-      <LayoutPost />
-      <HomeView />
-    </>
+    <main>
+      <h2 className='text-center'>Post lux</h2>
+      <LayoutPost {...messageLux} />
+      <HomeView {...lux} />
+    </main>
   )
 }
 

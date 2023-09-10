@@ -1,8 +1,8 @@
 import { type Message } from '../types'
-// const url = 'http://localhost:3000/api/lux'
 const API_URL: string = import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
-async function gettingLux(numberOfElements: number): Promise<Message[] | undefined> {
+async function gettingLux(uid: string): Promise<Message[] | undefined> {
+
   try {
     const options = {
       method: 'GET',
@@ -10,11 +10,12 @@ async function gettingLux(numberOfElements: number): Promise<Message[] | undefin
         'Content-Type': 'application/json'
       }
     }
-    const response = await fetch(`${API_URL}/api/luxers/${numberOfElements}`, options)
+    const response = await fetch(`${API_URL}/api/user/${uid}`, options)
 
     if (response.ok) {
-      const result: Message[] = await response.json()
-      return result
+      const result = await response.json()
+
+      return result.myLux.reverse()
     }
   } catch (err) {
     console.error(err)

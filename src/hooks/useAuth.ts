@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, se
 import { auth } from '../server/firebase'
 import { ErrorContext } from '../context/error'
 import useLogin from './useLogin'
+import createUser from '../server/createUser'
 
 interface useAuthReturnType {
   registerUser: (email: string, password: string) => Promise<void>
@@ -17,16 +18,18 @@ interface useAuthReturnType {
   }
 }
 
-function useAuth (): useAuthReturnType {
+function useAuth(): useAuthReturnType {
   const [isRegister, setIsRegister] = useState(true)
   const { error, handleError } = useContext(ErrorContext)
   const { isLogin, setIsLogin, currentUser } = useLogin()
 
   const registerUser = async (email: string, password: string): Promise<void> => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+      await createUser(userCredential)
 
       if (auth.currentUser === null) return
+
       await sendEmailVerification(auth.currentUser)
         .then(() => {
           handleError('You were sent an email for you to verify')

@@ -3,7 +3,7 @@ import RegisterAndLogin from '../components/RegisterAndLogin'
 import useAuth from '../hooks/useAuth'
 import ProfileUser from '../components/ProfileUser'
 
-function Profile (): JSX.Element {
+function Profile(): JSX.Element {
   const { registerUser, loginUser, signOutUser, isRegister, isLogin, error, currentUser } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
@@ -15,7 +15,6 @@ function Profile (): JSX.Element {
     const email = target['signup-email'].value
     const password = target['signup-password'].value
 
-    console.log('🚀 ~ file: Profile.tsx:76 ~ handleSubmit ~ isRegister:', isRegister)
     isRegister
       ? await loginUser(email, password)
       : await registerUser(email, password)
@@ -36,7 +35,10 @@ function Profile (): JSX.Element {
             />
         }
         {
-          error.showError && <div>{error.messageError}</div>
+          error.showError &&
+          <div className='absolute top-0 right-0 bg-blue-9 p-3 m-3 rounded-lg'>
+            {error.messageError}
+          </div>
         }
 
       </div>

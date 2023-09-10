@@ -30,7 +30,6 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
 
   return (
     <div className='text-center'>
-      <h2>Post blog</h2>
       <form
         className='flex flex-col items-center gap-2'
         action="post-blog"

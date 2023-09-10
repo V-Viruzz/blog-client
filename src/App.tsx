@@ -1,18 +1,27 @@
-import { Route } from 'wouter'
-import Home from './page/Home'
-import Profile from './page/Profile'
 import Navbar from './components/Navbar'
-import './App.css'
+import Profile from './page/Profile'
 import Saved from './page/Saved'
+import Home from './page/Home'
+import { Route, Router, Switch } from 'wouter'
+import './App.css'
+import Initial from './page/Initial'
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   return (
     <>
-      <Route path="/saved" component={Saved} />
-      <Route path="/home" component={Home} />
-      <Route path="/profile" component={Profile} />
+      <Switch>
+        <Route path="/" component={Initial} />
 
-      <Navbar />
+        <Router>
+          <Route path="/saved" component={Saved} />
+          <Route path="/home" component={Home} />
+          <Route path="/profile" component={Profile} />
+
+          <Navbar />
+        </Router>
+
+      </Switch>
+
     </>
   )
 }

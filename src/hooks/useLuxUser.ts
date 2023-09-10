@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { type Message } from '../types'
 import { LuxContext } from '../context/lux'
-import gettingLux from '../server/gettingLux'
+import gettingLuxUser from '../server/gettingLuxUser'
 
 export interface useLuxReturnType {
   isLoading: boolean
@@ -10,7 +10,7 @@ export interface useLuxReturnType {
   incrementElements: (num: number) => void
 }
 
-function useLux(): useLuxReturnType {
+function useLuxUser(uid: string): useLuxReturnType {
   const { refresh } = useContext(LuxContext)
   const [lux, setLux] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(true) // Nuevo estado local para controlar la carga
@@ -21,9 +21,8 @@ function useLux(): useLuxReturnType {
   }
 
   useEffect(() => {
-    gettingLux(numberOfElements)
+    gettingLuxUser(uid)
       .then((res) => {
-        console.log('🚀 ~ file: useLux.ts:26 ~ .then ~ res:', res)
         if (typeof res === 'undefined') { console.log('res is undefined'); return }
         setLux(res)
         setIsLoading(false)
@@ -32,9 +31,9 @@ function useLux(): useLuxReturnType {
         console.log(err)
         setIsLoading(false)
       })
-  }, [refresh, numberOfElements])
+  }, [refresh, numberOfElements, uid])
 
   return { isLoading, lux, setLux, incrementElements }
 }
 
-export default useLux
+export default useLuxUser

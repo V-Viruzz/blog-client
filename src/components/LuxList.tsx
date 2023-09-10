@@ -5,11 +5,10 @@ interface Props {
   incrementElements: (num: number) => void
 }
 
-function LuxList ({ lux, incrementElements }: Props): JSX.Element {
+function LuxList({ lux, incrementElements }: Props): JSX.Element {
   const getImageURL = (imageOptimized: any): string => {
-    const miBuffer = new Uint8Array(imageOptimized.buffer.data)
-    const blob = new Blob([miBuffer], { type: imageOptimized.mimetype })
-    return URL.createObjectURL(blob)
+    const base64Image = `data:${imageOptimized.mimetype};base64,${imageOptimized.buffer}`
+    return base64Image
   }
 
   return (
@@ -22,7 +21,7 @@ function LuxList ({ lux, incrementElements }: Props): JSX.Element {
                 className="border-solid border-zinc-6 border-2 rounded-3 max-w-24rem w-100% p-3"
                 key={index}>
                 {text?.length !== 0 && <p>{text}</p>}
-                {(image !== undefined) && <img src={getImageURL(image.imageOptimized)} alt="Imagen" />}
+                {(image.imageOptimized != undefined) && <img src={getImageURL(image.imageOptimized)} alt="Imagen" />}
               </div>
             )
           })

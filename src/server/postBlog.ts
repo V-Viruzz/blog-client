@@ -17,10 +17,9 @@ async function postBlog({ message, image, user }: Message): Promise<void> {
     formData.append('text', message)
   }
   formData.append('date', new Date().toISOString())
-  console.log(formData)
 
   const options = {
-    method: 'PUT',
+    method: user !== undefined ? 'PUT' : 'POST',
     // headers: {
     //   Origin: 'http://localhost:3000'
     // },
