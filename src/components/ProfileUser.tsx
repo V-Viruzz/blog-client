@@ -1,5 +1,7 @@
+import { User } from "firebase/auth"
+
 interface Props {
-  user: object
+  user: User
   signOutUser: () => Promise<void>
 }
 
@@ -16,7 +18,7 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
 
       <div className="flex flex-col text-xl py-10 gap-3 text-zinc-5">
         <div>
-          name: {user.name ? user.name : 'Anonymous'}
+          name: {user.displayName ? user.displayName : 'Anonymous'}
         </div>
         <div>
           email: {user.email}

@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification } from 'firebase/auth'
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, User } from 'firebase/auth'
 import { auth } from '../server/firebase'
 import { ErrorContext } from '../context/error'
 import useLogin from './useLogin'
@@ -11,7 +11,7 @@ interface useAuthReturnType {
   signOutUser: () => Promise<void>
   isRegister: boolean
   isLogin: boolean
-  currentUser: object
+  currentUser: User
   error: {
     showError: boolean
     messageError: string
