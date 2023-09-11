@@ -1,10 +1,10 @@
+import { Route, Router, Switch } from 'wouter'
 import Navbar from './components/Navbar'
 import Profile from './page/Profile'
 import Saved from './page/Saved'
 import Home from './page/Home'
-import { Route, Router, Switch } from 'wouter'
-import './App.css'
 import Initial from './page/Initial'
+import './App.css'
 
 function App(): JSX.Element {
   return (
