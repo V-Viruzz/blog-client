@@ -12,7 +12,7 @@ function App(): JSX.Element {
       <Switch>
         <Route path="/" component={Initial} />
 
-        <Router>
+        <Router base="/app">
           <Route path="/saved" component={Saved} />
           <Route path="/home" component={Home} />
           <Route path="/profile" component={Profile} />
