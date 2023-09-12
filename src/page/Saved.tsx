@@ -12,7 +12,7 @@ function Saved(): JSX.Element {
   const luxUser = useLux(currentUser.uid)
 
   return (
-    <main>
+    <main className='flex flex-col h-100%'>
       {
         Object.keys(currentUser).length !== 0
           ?
