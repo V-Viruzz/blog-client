@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 interface ContextProps {
   refresh: boolean
@@ -23,3 +23,5 @@ export const LuxProvider: React.FC<Props> = ({ children }) => {
     </LuxContext.Provider>
   )
 }
+
+export const useLuxContext = () => useContext(LuxContext)

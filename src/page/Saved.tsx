@@ -2,15 +2,14 @@ import LayoutPost from '../components/LayoutPost'
 import useMessage from '../hooks/useMessage'
 import useLogin from '../hooks/useLogin'
 import HomeView from '../components/HomeView'
-import useLuxUser from '../hooks/useLuxUser'
+import useLux from '../hooks/useLux'
 import ErrorCard from '../components/ErrorCard'
 
 
 function Saved(): JSX.Element {
   const { currentUser } = useLogin()
-  console.log('🚀 ~ file: Saved.tsx:9 ~ Saved ~ currentUser:', currentUser)
   const useMessageUser = useMessage(currentUser.uid)
-  const luxUser = useLuxUser(currentUser.uid)
+  const luxUser = useLux(currentUser.uid)
 
   return (
     <main>

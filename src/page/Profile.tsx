@@ -21,8 +21,8 @@ function Profile(): JSX.Element {
   }
 
   return (
-    <main className="grid place-content-center h-100%">
-      <div className="grid grid-cols-auto grid-rows-layout">
+    <main className="flex w-100% h-100% flex-col justify-center flex-wrap content-center">
+      <div className="flex flex-wrap content-center w-100% flex-col">
         {
           isLogin
             ? <ProfileUser

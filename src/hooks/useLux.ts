@@ -1,7 +1,8 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { type Message } from '../types'
-import { LuxContext } from '../context/lux'
+import { useLuxContext } from '../context/lux'
 import gettingLux from '../server/gettingLux'
+import gettingUser from '../server/gettingUser'
 
 export interface useLuxReturnType {
   isLoading: boolean
@@ -10,29 +11,39 @@ export interface useLuxReturnType {
   incrementElements: (num: number) => void
 }
 
-function useLux(): useLuxReturnType {
-  const { refresh } = useContext(LuxContext)
+function useLux(uid?: string): useLuxReturnType {
+  const { refresh } = useLuxContext()
   const [lux, setLux] = useState<Message[]>([])
-  const [isLoading, setIsLoading] = useState(true) // Nuevo estado local para controlar la carga
+  const [isLoading, setIsLoading] = useState(true)
   const [numberOfElements, setNumberOfElements] = useState(7)
 
   const incrementElements = (num: number): void => {
     setNumberOfElements(prev => prev + num)
   }
 
+  const fetchData = async () => {
+    try {
+      const res = uid === 'home'
+        ? await gettingLux(numberOfElements)
+        : uid !== 'home'
+          ? await gettingUser(uid)
+          : undefined
+
+      if (typeof res === 'undefined') {
+        console.log('res is undefined')
+        return
+      }
+      setLux(res)
+      setIsLoading(false)
+    } catch (err) {
+      console.log(err)
+      setIsLoading(false)
+    }
+  }
+
   useEffect(() => {
-    gettingLux(numberOfElements)
-      .then((res) => {
-        console.log('🚀 ~ file: useLux.ts:26 ~ .then ~ res:', res)
-        if (typeof res === 'undefined') { console.log('res is undefined'); return }
-        setLux(res)
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        console.log(err)
-        setIsLoading(false)
-      })
-  }, [refresh, numberOfElements])
+    fetchData()
+  }, [refresh, numberOfElements, uid])
 
   return { isLoading, lux, setLux, incrementElements }
 }

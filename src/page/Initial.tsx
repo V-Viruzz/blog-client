@@ -1,4 +1,5 @@
 import { Link } from "wouter"
+import logo from '../../public/logo.png'
 
 function Initial(): JSX.Element {
 
@@ -7,10 +8,10 @@ function Initial(): JSX.Element {
       {/* Header */}
       <header className='h-min'>
         <nav className='flex items-center justify-between max-w-7xl mx-auto px-1 py-6 sm:px-6 lg:px-8'>
-          <div className='flex items-center flex-shrink-0 gap-3'>
+          <div className='flex items-center flex-shrink-0 gap-4'>
             <img
-              className='h-8 w-auto'
-              src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
+              className='h-9 w-auto'
+              src={logo}
               alt='Workflow'
             />
             <h2 className='text-sm text-inherit font-bold'>Luxer</h2>
@@ -36,7 +37,7 @@ function Initial(): JSX.Element {
           <h1 className='text-2xl font-bold text-center w-60'>A place to save messages</h1>
           <div className='flex justify-center'>
             <Link href='home'>
-              <a className='font-bold text-sm decoration-none w-30 h-13 bg-zinc-800 rounded-lg flex items-center justify-center gap-2 transition duration-150 ease-in-out shadow-lg text-white hover:bg-blue-600 hover:text-white '>Get started</a>
+              <a className='font-bold text-sm decoration-none w-30 h-13 bg-zinc-800 rounded-lg flex items-center justify-center gap-2 transition duration-200 ease-in-out shadow-lg text-white hover:bg-white hover:text-black '>Get started</a>
             </Link>
           </div>
         </div>

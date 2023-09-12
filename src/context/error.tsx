@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 
 interface ContextProps {
   error: {
@@ -32,3 +32,5 @@ export const ErrorProvider: React.FC<Props> = ({ children }) => {
     </ErrorContext.Provider>
   )
 }
+
+export const useErrorContext = () => useContext(ErrorContext)

@@ -5,7 +5,7 @@ import useLux from '../hooks/useLux'
 
 function Home(): JSX.Element {
   const messageLux = useMessage()
-  const lux = useLux()
+  const lux = useLux('home')
 
   return (
     <main>

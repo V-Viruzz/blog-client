@@ -26,7 +26,11 @@ function LuxList({ lux, incrementElements }: Props): JSX.Element {
             )
           })
         }
-        <button onClick={() => { incrementElements(4) }}>Load more</button>
+        {
+          lux.length
+            ? <button onClick={() => { incrementElements(4) }}>Load more</button>
+            : null
+        }
       </div>
     </div>
   )

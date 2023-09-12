@@ -1,7 +1,7 @@
 import { type Message } from '../types'
 const API_URL: string = import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
-async function gettingLux(uid: string): Promise<Message[] | undefined> {
+async function gettingUser(uid: string | undefined): Promise<Message[] | undefined> {
 
   try {
     const options = {
@@ -22,4 +22,4 @@ async function gettingLux(uid: string): Promise<Message[] | undefined> {
   }
 }
 
-export default gettingLux
+export default gettingUser
