@@ -15,7 +15,7 @@ function useLogin(): useLoginReturnType {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user != null) {
-        console.log('user is already logged in', user)
+        console.log('user is already logged in')
         setIsLogin(user.emailVerified)
         setCurrentUser(user)
       } else {

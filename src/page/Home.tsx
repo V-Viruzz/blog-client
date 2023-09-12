@@ -8,7 +8,7 @@ function Home(): JSX.Element {
   const lux = useLux('home')
 
   return (
-    <main>
+    <main className='flex flex-col h-100%'>
       <h2 className='text-center'>Post lux</h2>
       <LayoutPost {...messageLux} />
       <HomeView {...lux} />
