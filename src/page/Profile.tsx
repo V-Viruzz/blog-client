@@ -21,7 +21,7 @@ function Profile(): JSX.Element {
   }
 
   return (
-    <main className="flex w-100% h-100% flex-col justify-center flex-wrap content-center">
+    <div className="flex w-100% h-100vh flex-col justify-center flex-wrap content-center">
       <div className="flex flex-wrap content-center w-100% flex-col">
         {
           isLogin
@@ -42,7 +42,7 @@ function Profile(): JSX.Element {
         }
 
       </div>
-    </main>
+    </div>
   )
 }
 

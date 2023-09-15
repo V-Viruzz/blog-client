@@ -13,12 +13,16 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
   return (
     <section className="flex flex-col w-80% h-2xl ">
       <div>
-        <img className="rounded-100% w-20 h-20" src="https://hubs.belmontforum.org/wp-content/plugins/buddyboss-platform/bp-core/images/profile-avatar-buddyboss.png" alt="" />
+        <img
+          className="rounded-100% w-20 h-20"
+          src={user.photoURL ?? "https://hubs.belmontforum.org/wp-content/plugins/buddyboss-platform/bp-core/images/profile-avatar-buddyboss.png"}
+          alt="profile"
+        />
       </div>
 
       <div className="flex flex-col text-xl py-10 gap-3 text-zinc-5">
         <div>
-          name: {user.displayName ? user.displayName : 'Anonymous'}
+          name: {user.displayName ?? 'Anonymous'}
         </div>
         <div>
           email: {user.email}

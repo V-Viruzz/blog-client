@@ -1,4 +1,5 @@
 import { Route, Router, Switch } from 'wouter'
+import NavbarDesktop from './components/NavBarDesktop'
 import Navbar from './components/Navbar'
 import Profile from './page/Profile'
 import Saved from './page/Saved'
@@ -13,9 +14,12 @@ function App(): JSX.Element {
         <Route path="/" component={Initial} />
 
         <Router>
-          <Route path="/saved" component={Saved} />
-          <Route path="/home" component={Home} />
-          <Route path="/profile" component={Profile} />
+          <main className='flex h-100%'>
+            <NavbarDesktop />
+            <Route path="/saved" component={Saved} />
+            <Route path="/home" component={Home} />
+            <Route path="/profile" component={Profile} />
+          </main>
 
           <Navbar />
         </Router>
