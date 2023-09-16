@@ -11,7 +11,7 @@ function Saved(): JSX.Element {
   const luxUser = useLux(currentUser.uid)
 
   return (
-    <div className='w-full'>
+    <>
       {
         Object.keys(currentUser).length !== 0
           ?
@@ -22,7 +22,7 @@ function Saved(): JSX.Element {
           </>
           : <ErrorCard />
       }
-    </div>
+    </>
   )
 }
 

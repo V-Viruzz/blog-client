@@ -19,6 +19,11 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
     const target = (event.target as HTMLFormElement)
     const message = target['input-message'].value;
     target.reset()
+
+    if (image === undefined && message === '') {
+      alert('empty message')
+      return
+    }
     sendMessage(message)
 
   }
@@ -31,42 +36,72 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
   return (
     <div className='text-center'>
       <form
-        className='flex flex-col items-center gap-2'
+        className='relative flex flex-col items-center gap-2'
         action="post-blog"
         onSubmit={handleSubmit}
       >
         <textarea
-          className='w-100% h-20 max-w-sm'
+          placeholder="Write here..."
+          className='w-100% h-28'
           id='input-message'
-        ></textarea>
-        <div className='flex justify-between items-center w-100% max-w-sm'>
-          <input
-            className='hidden'
-            name='file'
-            type='file'
-            id='file-upload'
-            accept='image/*'
-            onChange={handleChangeImage}
-          />
-          <label
-            className='w-16 flex items-center cursor-pointer'
-            htmlFor='file-upload'
-          >
-            <ImageAddIcon strokeWidth='2' strokeLinecap="round" stroke={`${(image !== undefined) ? '#01f77b' : '#ffffff'}`} />
-          </label>
-          <button
-            type='button'
-            className='bg-transparent border-none shadow-none active:border-none p-0'
-            onClick={() => { setRefresh(!refresh) }}>
+        />
 
-            <RefreshIcon strokeWidth="2" strokeLinecap="round" />
-          </button>
-          <button
-            className='bg-transparent border-none shadow-none active:border-none p-0'
-            type='submit'>
+        <div className='absolute bottom-0 w-96% py-2 '>
+          <div className='flex justify-between items-center w-100%'>
+            <input
+              className='hidden'
+              name='file'
+              type='file'
+              id='file-upload'
+              accept='image/*'
+              onChange={handleChangeImage}
+            />
+            <div className='flex gap-4'>
+              <label
+                className='flex items-center cursor-pointer gap-1'
+                htmlFor='file-upload'
+              >
+                <ImageAddIcon
+                  width={22}
+                  height={22}
+                  strokeWidth='2'
+                  strokeLinecap="round"
+                  stroke={`${(image !== undefined) ? '#01f77b' : '#8f8f8f'}`}
+                />
+                <div className={`text-1rem ${(image !== undefined) ? 'text-#01f77b' : 'text-#8f8f8f'}`}>Image</div>
+              </label>
 
-            <SendIcon strokeWidth="2" strokeLinecap="round" />
-          </button>
+              <button
+                type='button'
+                className='flex items-center bg-transparent border-none shadow-none active:border-none p-0 gap-1'
+                onClick={() => { setRefresh(!refresh) }}>
+
+                <RefreshIcon
+                  width={22}
+                  height={22}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  stroke='#8f8f8f'
+                />
+                <div className="text-1rem text-#8f8f8f">Refresh</div>
+              </button>
+            </div>
+
+            <div>
+              <button
+                className='bg-transparent border-none shadow-none active:border-none p-0'
+                type='submit'>
+
+                <SendIcon
+                  width={22}
+                  height={22}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </button>
+            </div>
+
+          </div>
         </div>
       </form>
     </div>

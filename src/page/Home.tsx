@@ -8,11 +8,11 @@ function Home(): JSX.Element {
   const lux = useLux('home')
 
   return (
-    <div className='w-full'>
+    <>
       <h2 className='text-center'>Post lux</h2>
       <LayoutPost {...messageLux} />
       <HomeView {...lux} />
-    </div>
+    </>
   )
 }
 

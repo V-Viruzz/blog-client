@@ -18,7 +18,7 @@ function LuxList({ lux, incrementElements }: Props): JSX.Element {
           lux.map(({ text, image }, index) => {
             return (
               <div
-                className="border-solid border-zinc-6 border-2 rounded-3 max-w-24rem w-100% p-3"
+                className="border-solid border-zinc-6 border-2 rounded-3 w-100% p-3"
                 key={index}>
                 {text?.length !== 0 && <p>{text}</p>}
                 {(image.imageOptimized != undefined) && <img src={getImageURL(image.imageOptimized)} alt="Imagen" />}
