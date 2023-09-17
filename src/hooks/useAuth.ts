@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, User } from 'firebase/auth'
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, sendEmailVerification, type User } from 'firebase/auth'
 import { auth } from '../server/firebase'
 import { useErrorContext } from '../context/error'
 import useLogin from './useLogin'
@@ -18,7 +18,7 @@ interface useAuthReturnType {
   }
 }
 
-function useAuth(): useAuthReturnType {
+function useAuth (): useAuthReturnType {
   const [isRegister, setIsRegister] = useState(true)
   const { error, handleError } = useErrorContext()
   const { isLogin, setIsLogin, currentUser } = useLogin()

@@ -15,7 +15,7 @@ const RegisterAndLogin: React.FC<Props> = ({ isRegister, handleSubmit }) => {
         </h3>
       </div>
       <div>
-        <form action="" className="flex h-full flex-col gap-3" onSubmit={handleSubmit}>
+        <form action="" className="flex h-full flex-col gap-3" onSubmit={() => handleSubmit}>
           <LoginSocial />
           <input
             type='email'
@@ -30,6 +30,7 @@ const RegisterAndLogin: React.FC<Props> = ({ isRegister, handleSubmit }) => {
           <button className='bg-blue-9 dark:bg-slate-800 text-white w-full h-11 rounded-lg'>Continuar</button>
         </form>
       </div>
+            <div className='h-9rem'></div>
     </>
   )
 }

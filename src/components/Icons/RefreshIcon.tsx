@@ -19,5 +19,3 @@ const RefreshIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 )
 export default RefreshIcon
-
-

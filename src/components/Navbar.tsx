@@ -1,23 +1,12 @@
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import SavedIcon from './Icons/SavedIcon'
 import HomeIcon from './Icons/HomeIcon'
 import ProfileIcon from './Icons/ProfileIcon'
 import logo from '../assets/logo.png'
 
-// interface LinkContainerProps {
-//   children: React.ReactNode
-//   content: string
-// }
-
-// function LinkContainer(props: LinkContainerProps): JSX.Element {
-//   return (
-//     <a className={`md:after:content-["${props.content}"] no-underline text-zinc-4 flex items-center gap-2 text-lg`}>
-//       {props.children}
-//     </a>
-//   )
-// }
-
-function Navbar(): JSX.Element {
+function Navbar (): JSX.Element {
+  const [location] = useLocation()
+  console.log('🚀 ~ file: Navbar.tsx:9 ~ Navbar ~ location:', location)
 
   return (
     <div className='md:hidden z-5 bottom-0 py-sm left-0 right-0 fixed justify-evenly px-sm animate-in duration-300 ease-out bg-dark-6 flex md:right-auto md:top-0 md:flex-col md:justify-start md:gap-10 md:w-12rem md:py-2rem md:px-1.2rem '>
@@ -30,20 +19,20 @@ function Navbar(): JSX.Element {
         <h2 className='text-1.1rem text-inherit font-bold m-0'>Luxer</h2>
       </div>
       <Link href="/saved">
-        <a className={`md:after:content-['Saved'] no-underline text-zinc-4 flex items-center gap-2 text-lg`}>
-          <SavedIcon width='34px' height='34px' strokeWidth="2.2" />
+        <a className={'no-underline text-zinc-4 flex items-center'}>
+          <SavedIcon width='30px' height='30px' strokeWidth="2.2" stroke={location === '/saved' ? '#fff' : '#8f8f8f' } />
         </a>
       </Link>
 
       <Link href="/home">
-        <a className={`md:after:content-['Home'] no-underline text-zinc-4 flex items-center gap-2 text-lg`}>
-          <HomeIcon width='34px' height='34px' />
+        <a className={'no-underline text-zinc-4 flex items-center'}>
+          <HomeIcon width='30px' height='30px' fill={location === '/home' ? '#fff' : '#8f8f8f' } />
         </a>
       </Link>
 
       <Link href="/profile">
-        <a className={`md:after:content-['Profile'] no-underline text-zinc-4 flex items-center gap-2 text-lg`}>
-          <ProfileIcon width='34px' height='34px' strokeWidth="1.5" />
+        <a className={'no-underline text-zinc-4 flex items-center'}>
+          <ProfileIcon width='30px' height='30px' strokeWidth="1.5" stroke={location === '/profile' ? '#fff' : '#8f8f8f' } />
         </a>
       </Link>
 

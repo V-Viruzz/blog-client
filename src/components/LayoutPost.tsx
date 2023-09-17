@@ -13,11 +13,10 @@ interface Props {
 const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
   const { setRefresh, refresh } = useContext(LuxContext)
 
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
     const target = (event.target as HTMLFormElement)
-    const message = target['input-message'].value;
+    const message = target['input-message'].value
     target.reset()
 
     if (image === undefined && message === '') {
@@ -25,7 +24,6 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
       return
     }
     sendMessage(message)
-
   }
 
   const handleChangeImage = (event: ChangeEvent<HTMLInputElement>): void => {

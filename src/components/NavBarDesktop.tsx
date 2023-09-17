@@ -4,8 +4,7 @@ import HomeIcon from './Icons/HomeIcon'
 import ProfileIcon from './Icons/ProfileIcon'
 import logoExt from '../assets/logo-ext.png'
 
-
-function NavbarDesktop(): JSX.Element {
+function NavbarDesktop (): JSX.Element {
   const linkStyle = ' no-underline text-zinc-4 flex items-center gap-2 text-lg hover:opacity-80'
 
   return (

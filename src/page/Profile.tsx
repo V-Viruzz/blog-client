@@ -3,7 +3,7 @@ import RegisterAndLogin from '../components/RegisterAndLogin'
 import useAuth from '../hooks/useAuth'
 import ProfileUser from '../components/ProfileUser'
 
-function Profile(): JSX.Element {
+function Profile (): JSX.Element {
   const { registerUser, loginUser, signOutUser, isRegister, isLogin, error, currentUser } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {

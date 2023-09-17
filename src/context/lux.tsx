@@ -24,4 +24,4 @@ export const LuxProvider: React.FC<Props> = ({ children }) => {
   )
 }
 
-export const useLuxContext = () => useContext(LuxContext)
+export const useLuxContext = (): ContextProps => useContext(LuxContext)

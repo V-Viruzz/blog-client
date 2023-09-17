@@ -5,22 +5,21 @@ export interface Message {
 }
 
 export interface ImageData {
-  imageOptimized: {
-    originalname: string
-    mimetype: string
-    encoding: string
-    buffer: {
-      data: Buffer
-      type: string
-    }
-  }
+  imageOptimized: ImageOptimizedType
+  imageOriginal: ImageOriginalType
+}
+
+export interface ImageOptimizedType {
+  originalname: string
+  mimetype: string
+  encoding: string
+  buffer: string
+}
+export interface ImageOriginalType {
   imageOriginal: {
     originalname: string
     mimetype: string
     encoding: string
-    buffer: {
-      data: Buffer
-      type: string
-    }
+    buffer: string
   }
 }

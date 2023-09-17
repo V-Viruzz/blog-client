@@ -1,24 +1,25 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react'
 import { Route, Router, Switch } from 'wouter'
 import NavbarDesktop from './components/NavBarDesktop'
 import Navbar from './components/Navbar'
 import Initial from './page/Initial'
 import './App.css'
 
-const Home = lazy(() => import('./page/Home'));
-const Saved = lazy(() => import('./page/Saved'));
-const Profile = lazy(() => import('./page/Profile'));
+const Home = lazy(async () => await import('./page/Home'))
+const Saved = lazy(async () => await import('./page/Saved'))
+const Profile = lazy(async () => await import('./page/Profile'))
 
-function App(): JSX.Element {
+/* eslint-disable react/no-children-prop */
+function App (): JSX.Element {
   return (
     <>
       <Switch>
         <Route path="/" component={Initial} />
 
         <Router>
-          <main className='flex h-100vh'>
+          <main className='flex min-h-100vh h-full'>
             <NavbarDesktop />
-            <div className='w-full h-full flex justify-center'>
+            <div className='w-full  flex justify-center'>
               <div className='w-full h-full max-w-2xl md:px-lg px-5% flex flex-col'>
 
                 <Route

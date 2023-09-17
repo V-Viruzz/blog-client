@@ -33,4 +33,4 @@ export const ErrorProvider: React.FC<Props> = ({ children }) => {
   )
 }
 
-export const useErrorContext = () => useContext(ErrorContext)
+export const useErrorContext = (): ContextProps => useContext(ErrorContext)

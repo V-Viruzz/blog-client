@@ -1,7 +1,7 @@
 import LuxList from './LuxList'
 import Loading from './Loading'
 
-import { useLuxReturnType } from '../hooks/useLux'
+import { type useLuxReturnType } from '../hooks/useLux'
 
 interface Props extends useLuxReturnType { }
 

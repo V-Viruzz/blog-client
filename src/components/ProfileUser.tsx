@@ -1,4 +1,4 @@
-import { User } from "firebase/auth"
+import { type User } from 'firebase/auth'
 
 interface Props {
   user: User
@@ -15,7 +15,7 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
       <div>
         <img
           className="rounded-100% w-20 h-20"
-          src={user.photoURL ?? "https://hubs.belmontforum.org/wp-content/plugins/buddyboss-platform/bp-core/images/profile-avatar-buddyboss.png"}
+          src={user.photoURL ?? 'https://hubs.belmontforum.org/wp-content/plugins/buddyboss-platform/bp-core/images/profile-avatar-buddyboss.png'}
           alt="profile"
         />
       </div>
@@ -32,8 +32,10 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
       <div>
         <button
           className="h-10 w-30"
-          onClick={handleClickSignOut}>Sign out</button>
+
+          onClick={() => handleClickSignOut}>Sign out</button>
       </div>
+
     </section>
   )
 }

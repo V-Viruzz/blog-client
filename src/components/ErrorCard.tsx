@@ -1,7 +1,6 @@
-import { Link } from "wouter";
+import { Link } from 'wouter'
 
-
-function ErrorCard(): JSX.Element {
+function ErrorCard (): JSX.Element {
   return (
     <div className='h-100vh grid place-content-center'>
       <div className='w-16rem h-8rem border-solid border-2 border-zinc-5 rounded-lg flex flex-col items-center justify-evenly'>
