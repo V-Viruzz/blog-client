@@ -42,7 +42,7 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
       >
         <textarea
           placeholder="Write here..."
-          className='w-100% h-28'
+          className='w-100% min-w-100% h-28'
           id='input-message'
         />
 
@@ -89,12 +89,12 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
 
             <div>
               <button
-                className='bg-transparent border-none shadow-none active:border-none p-0'
+                className='flex items-center justify-center border-none shadow-none active:border-none p-0 w-1.9rem h-1.9rem rounded-50% bg-#333331 hover:bg-#424240'
                 type='submit'>
 
                 <SendIcon
-                  width={22}
-                  height={22}
+                  width={14}
+                  height={14}
                   strokeWidth="2"
                   strokeLinecap="round"
                 />

@@ -11,7 +11,7 @@ const HomeView: React.FC<Props> = ({ lux, isLoading, incrementElements }) => {
       {
         !isLoading
           ? <LuxList lux={lux} incrementElements={incrementElements} />
-          : <Loading />
+          : <div className='h-full grid place-content-center'><Loading /></div>
       }
     </>
   )

@@ -10,7 +10,7 @@ const RefreshIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (
     {...props}
   >
     <path
-      stroke={props.stroke}
+      stroke={props.stroke ?? '#ffff'}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2.4}

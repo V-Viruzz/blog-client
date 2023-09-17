@@ -11,7 +11,6 @@ async function gettingLux(numberOfElements: number): Promise<Message[] | undefin
       }
     }
     const response = await fetch(`${API_URL}/api/luxers/${numberOfElements}`, options)
-
     if (response.ok) {
       const result: Message[] = await response.json()
       return result
