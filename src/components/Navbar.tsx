@@ -6,7 +6,6 @@ import logo from '../assets/logo.png'
 
 function Navbar (): JSX.Element {
   const [location] = useLocation()
-  console.log('🚀 ~ file: Navbar.tsx:9 ~ Navbar ~ location:', location)
 
   return (
     <div className='md:hidden z-5 bottom-0 py-sm left-0 right-0 fixed justify-evenly px-sm animate-in duration-300 ease-out bg-dark-6 flex md:right-auto md:top-0 md:flex-col md:justify-start md:gap-10 md:w-12rem md:py-2rem md:px-1.2rem '>

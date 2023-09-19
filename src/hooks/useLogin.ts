@@ -8,7 +8,8 @@ interface useLoginReturnType {
   currentUser: User
 }
 
-function useLogin(): useLoginReturnType {
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
+function useLogin (): useLoginReturnType {
   const [isLogin, setIsLogin] = useState(false)
   const [currentUser, setCurrentUser] = useState({} as User)
 

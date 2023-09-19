@@ -3,8 +3,7 @@ import { type UserCredential } from 'firebase/auth'
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const API_URL: string = import.meta.env.VITE_API_URL || process.env.VITE_API_URL
 
-async function createUser ({ user }: UserCredential): Promise<void> {
-  console.log('🚀 ~ file: createUser.ts:4 ~ createUser ~ auth:', user)
+async function createUser ({ user }: UserCredential): Promise<any> {
   try {
     const newUser = {
       user: {
@@ -23,7 +22,6 @@ async function createUser ({ user }: UserCredential): Promise<void> {
     }
     const response = await fetch(`${API_URL}/api/user`, options)
 
-    console.log('🚀 ~ file: createUser.ts:25 ~ createUser ~ response:', response)
     if (response.ok) {
       const result = await response.json()
       return result

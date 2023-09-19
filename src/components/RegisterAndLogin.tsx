@@ -15,7 +15,7 @@ const RegisterAndLogin: React.FC<Props> = ({ isRegister, handleSubmit }) => {
         </h3>
       </div>
       <div>
-        <form action="" className="flex h-full flex-col gap-3" onSubmit={() => handleSubmit}>
+        <form className="flex h-full flex-col gap-3" onSubmit={() => handleSubmit}>
           <LoginSocial />
           <input
             type='email'
