@@ -11,7 +11,7 @@ export interface useLuxReturnType {
   incrementElements: (num: number) => void
 }
 
-function useLux(uid?: string): useLuxReturnType {
+function useLux (uid?: string): useLuxReturnType {
   const { refresh } = useLuxContext()
   const [lux, setLux] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -21,7 +21,7 @@ function useLux(uid?: string): useLuxReturnType {
     setNumberOfElements(prev => prev + num)
   }
 
-  const fetchData = async () => {
+  const fetchData = async (): Promise<void> => {
     try {
       const res = uid === 'home'
         ? await gettingLux(numberOfElements)

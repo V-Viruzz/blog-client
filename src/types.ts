@@ -1,4 +1,5 @@
 export interface Message {
+  id: string
   text?: string
   date: Date
   image: ImageData
