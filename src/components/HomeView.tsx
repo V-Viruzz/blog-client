@@ -5,12 +5,12 @@ import { type useLuxReturnType } from '../hooks/useLux'
 
 interface Props extends useLuxReturnType { }
 
-const HomeView: React.FC<Props> = ({ lux, isLoading, incrementElements }) => {
+const HomeView: React.FC<Props> = ({ lux, isLoading, incrementElements, removeLux }) => {
   return (
     <>
       {
         !isLoading
-          ? <LuxList lux={lux} incrementElements={incrementElements} />
+          ? <LuxList lux={lux} incrementElements={incrementElements} removeLux={removeLux} />
           : <div className='h-full grid place-content-center'><Loading /></div>
       }
     </>

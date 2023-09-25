@@ -3,7 +3,7 @@ import HomeView from '../components/HomeView'
 import useMessage from '../hooks/useMessage'
 import useLux from '../hooks/useLux'
 
-function Home(): JSX.Element {
+function Home (): JSX.Element {
   const messageLux = useMessage()
   const lux = useLux('home')
 

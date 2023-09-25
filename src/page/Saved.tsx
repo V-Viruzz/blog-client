@@ -5,7 +5,7 @@ import HomeView from '../components/HomeView'
 import useLux from '../hooks/useLux'
 import ErrorCard from '../components/ErrorCard'
 
-function Saved(): JSX.Element {
+function Saved (): JSX.Element {
   const { currentUser } = useLogin()
   const useMessageUser = useMessage(currentUser.uid)
   const luxUser = useLux(currentUser.uid)
@@ -14,8 +14,7 @@ function Saved(): JSX.Element {
     <>
       {
         Object.keys(currentUser).length !== 0
-          ?
-          <>
+          ? <>
             <h2 className='text-center'>Saved lux</h2>
             <LayoutPost {...useMessageUser} />
             <HomeView {...luxUser} />

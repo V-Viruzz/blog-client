@@ -40,7 +40,7 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
       >
         <textarea
           placeholder="Write here..."
-          className='w-100% min-w-100% h-28'
+          className={'w-100% min-w-100% h-28'}
           id='input-message'
         />
 
@@ -56,7 +56,7 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
             />
             <div className='flex gap-4'>
               <label
-                className='flex items-center cursor-pointer gap-1'
+                className='flex items-center cursor-pointer gap-1 hover:brightness-140 '
                 htmlFor='file-upload'
               >
                 <ImageAddIcon
@@ -71,7 +71,7 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
 
               <button
                 type='button'
-                className='flex items-center bg-transparent border-none shadow-none active:border-none p-0 gap-1'
+                className='flex items-center bg-transparent border-none shadow-none hover:brightness-140 active:border-none p-0 gap-1'
                 onClick={() => { setRefresh(!refresh) }}>
 
                 <RefreshIcon

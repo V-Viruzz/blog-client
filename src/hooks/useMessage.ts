@@ -8,7 +8,7 @@ interface useMessageReturnType {
   sendMessage: (message: string) => Promise<void>
 }
 
-function useMessage(user?: string): useMessageReturnType {
+function useMessage (user?: string): useMessageReturnType {
   const { setRefresh, refresh } = useContext(LuxContext)
   const [image, setImage] = useState<Blob>()
 

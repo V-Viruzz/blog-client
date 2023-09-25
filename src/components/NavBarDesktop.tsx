@@ -5,7 +5,7 @@ import ProfileIcon from './Icons/ProfileIcon'
 import logoExt from '../assets/logo-ext.png'
 
 function NavbarDesktop (): JSX.Element {
-  const linkStyle = ' no-underline text-zinc-4 flex items-center gap-2 text-lg hover:opacity-80'
+  const linkStyle = ' no-underline text-zinc-4 flex items-center gap-2 text-lg hover:opacity-60'
 
   return (
     <div className='md:block hidden z-5 animate-in duration-300 ease-out '>
