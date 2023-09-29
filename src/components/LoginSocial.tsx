@@ -30,7 +30,7 @@ function LoginSocial (): JSX.Element {
   }
 
   return (
-    <div className='flex justify-between'>
+    <div className='grid grid-cols-2 gap-3'>
       <button
         type='button'
         className='bg-gray-100 hover:bg-gray-300 hover:text-black hover:border-gray-50 cursor-pointer px-3 py-2 font-semibold text-black inline-flex items-center space-x-2 rounded'

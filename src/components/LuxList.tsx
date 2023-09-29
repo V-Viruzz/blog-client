@@ -18,9 +18,13 @@ function LuxList ({ lux, incrementElements, removeLux }: Props): JSX.Element {
         {
           (lux.length > 0)
             ? <button
-            className='grid place-content-center p-1 rounded-36'
-            onClick={() => { incrementElements(4) }}>
-              <DownArrowIcon width={28} height={28}/>
+              className='grid place-content-center p-1 rounded-36 bg-zinc-2 @dark:bg-dark-6 '
+              onClick={() => { incrementElements(4) }}>
+              <DownArrowIcon
+                className='@dark:text-white text-zinc-4'
+                width={28}
+                height={28}
+              />
             </button>
             : null
         }

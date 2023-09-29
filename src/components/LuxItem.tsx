@@ -24,7 +24,7 @@ export function LuxItem ({ text, image, id, removeLux }: LuxItemProps): JSX.Elem
   }
 
   return (
-    <div className="bg-dark-6 rounded-3 w-100% relative">
+    <div className="bg-zinc-2 @dark:bg-dark-6 rounded-3 w-100% relative">
       {/* <div className="border-solid border-zinc-7 border-2 rounded-3 w-100% relative"> */}
       {
         location === '/saved'
@@ -37,9 +37,9 @@ export function LuxItem ({ text, image, id, removeLux }: LuxItemProps): JSX.Elem
               setHideMenu(true)
             }}
           >
-            <MenuLuxIcon width={20} />
+            <MenuLuxIcon className='@dark:text-white text-zinc-4' width={20} />
             {
-              hideMenu || <div className='b-solid b-1 border-zinc-8  right-0 p-2 bg-dark-6 rounded-2 mr-2 hover:contrast-110 text-4'>
+              hideMenu || <div className='b-solid b-1 @dark:border-zinc-8 border-zinc-3 bg-zinc-3 right-0 p-2 @dark:bg-dark-6 rounded-2 mr-2 hover:contrast-110 text-4'>
                 <button
                   className='flex gap-1 bg-transparent w-auto h-auto p-0 items-center active:border-0'
                   onClick={handleClickRemove}

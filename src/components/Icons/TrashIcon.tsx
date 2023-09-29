@@ -9,7 +9,7 @@ const TrashIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (
     viewBox="0 0 24 24"
     {...props}
   >
-    <g fill="#fff">
+    <g fill="currentColor">
       <path d="M3 6.524c0-.395.327-.714.73-.714h4.788c.006-.842.098-1.995.932-2.793A3.68 3.68 0 0 1 12 2a3.68 3.68 0 0 1 2.55 1.017c.834.798.926 1.951.932 2.793h4.788c.403 0 .73.32.73.714a.722.722 0 0 1-.73.714H3.73A.722.722 0 0 1 3 6.524Z" />
       <path
         fillRule="evenodd"

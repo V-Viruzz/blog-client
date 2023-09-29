@@ -21,8 +21,9 @@ function Profile (): JSX.Element {
   }
 
   return (
-    <div className="flex w-100% h-100vh flex-col justify-center flex-wrap content-center">
-      <div className="flex flex-wrap content-center w-100% flex-col">
+    <>
+    <div className='grid place-content-center h-full'>
+      <div>
         {
           isLogin
             ? <ProfileUser
@@ -43,6 +44,8 @@ function Profile (): JSX.Element {
 
       </div>
     </div>
+    <div className='w-100% h-4rem'></div>
+    </>
   )
 }
 

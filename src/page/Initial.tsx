@@ -1,13 +1,12 @@
-import { Link } from "wouter"
+import { Link } from 'wouter'
 import logo from '../assets/logo.png'
 
-function Initial(): JSX.Element {
-
+function Initial (): JSX.Element {
   return (
     <div className='grid grid-cols-1  justify-between min-h-screen '>
       {/* Header */}
       <header className='h-min'>
-        <nav className='flex items-center justify-between max-w-7xl mx-auto px-1 py-6 sm:px-6 lg:px-8'>
+        <nav className='flex items-center justify-between max-w-7xl mx-auto py-6 px-6 sm:px-8'>
           <div className='flex items-center flex-shrink-0 gap-4'>
             <img
               className='h-9 w-auto'

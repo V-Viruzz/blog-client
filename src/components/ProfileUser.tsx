@@ -33,7 +33,7 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
         <button
           className="h-10 w-30"
 
-          onClick={() => handleClickSignOut}>Sign out</button>
+          onClick={async () => { await handleClickSignOut() }}>Sign out</button>
       </div>
 
     </section>

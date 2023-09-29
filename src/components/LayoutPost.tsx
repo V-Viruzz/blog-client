@@ -66,7 +66,7 @@ const LayoutPost: React.FC<Props> = ({ image, setImage, sendMessage }) => {
                   strokeLinecap="round"
                   stroke={`${(image !== undefined) ? '#01f77b' : '#8f8f8f'}`}
                 />
-                <div className={`text-1rem ${(image !== undefined) ? 'text-#01f77b' : 'text-#8f8f8f'}`}>Image</div>
+                <div className={`text-1rem font-normal ${(image !== undefined) ? 'text-#01f77b' : 'text-#8f8f8f'}`}>Image</div>
               </label>
 
               <button

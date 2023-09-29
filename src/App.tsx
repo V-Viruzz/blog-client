@@ -20,7 +20,7 @@ function App (): JSX.Element {
           <main className='flex min-h-100vh h-full'>
             <NavbarDesktop />
             <div className='w-full  flex justify-center'>
-              <div className='w-full h-full max-w-2xl md:px-lg px-5% flex flex-col'>
+              <div className='w-full h-full max-w-2xl md:px-lg px-5% flex flex-col font-600 @dark:font-normal'>
 
                 <Route
                   path="/saved"

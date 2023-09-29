@@ -10,7 +10,7 @@ const DownArrowIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => (
     {...props}
   >
     <path
-      stroke="#fff"
+      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2.5}
