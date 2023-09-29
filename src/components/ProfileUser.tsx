@@ -11,7 +11,7 @@ const ProfileUser: React.FC<Props> = ({ user, signOutUser }) => {
   }
 
   return (
-    <section className="flex flex-col w-80% h-2xl ">
+    <section>
       <div>
         <img
           className="rounded-100% w-20 h-20"

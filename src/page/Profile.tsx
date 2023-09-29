@@ -44,7 +44,7 @@ function Profile (): JSX.Element {
 
       </div>
     </div>
-    <div className='w-100% h-4rem'></div>
+    <div className='w-100% h-4rem md:hidden'></div>
     </>
   )
 }
