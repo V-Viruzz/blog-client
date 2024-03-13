@@ -5,6 +5,8 @@ mensajes de forma privada. Similar a la práctica de enviarse mensajes a uno mis
 a dispositivos como computadoras o celulares, esta aplicación proporciona una solución centralizada y segura
 para almacenar mensajes importantes, ideas, recordatorios y más.
 
+> Backend - https://github.com/V-Viruzz/blog-server
+
 ### Secciones de la pagina
 - Home: ✉️ Chat publico y anonimo, sin nesecidad de registrarse
 - Saved: 🔒 Chat privado para guardar texto o imagenes
